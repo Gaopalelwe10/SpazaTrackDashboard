@@ -17,6 +17,8 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { HttpClientModule } from '@angular/common/http';
+import { MapComponent } from './components/map/map.component';
+import { LinechatComponent } from './components/linechat/linechat.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDMJCzNKJe3XDsfEdAPYnEAZWdsva0dTFU",
@@ -34,7 +36,9 @@ const firebaseConfig = {
     UsertableComponent,
     MenuComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MapComponent,
+    LinechatComponent
   ],
   imports: [
     BrowserModule,

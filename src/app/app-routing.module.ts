@@ -4,13 +4,19 @@ import { MenuComponent } from './menu/menu.component';
 import { UsertableComponent } from './components/usertable/usertable.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { SpazatableComponent } from './components/spazatable/spazatable.component';
+import { MapComponent } from './components/map/map.component';
+import { LinechatComponent } from './components/linechat/linechat.component';
 
 const routes: Routes = [
   {path: '', component : LoginComponent},
   {path: 'register', component :RegisterComponent},
 
   {path: 'menu', component : MenuComponent, children:[
-    {path:'userTable' , component: UsertableComponent}
+    {path:'userTable' , component: UsertableComponent},
+    {path: 'spazaTable', component: SpazatableComponent},
+    {path: 'map', component: MapComponent},
+    {path: 'linechart', component: LinechatComponent}
   ]}
 
 ];
