@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpazatableComponent } from './components/spazatable/spazatable.component';
-import { MatTableModule, MatPaginatorModule, MatSortModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatInputModule, MatSelectModule, MatRadioModule, MatCardModule } from '@angular/material';
+import { MatTableModule, MatPaginatorModule, MatSortModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatInputModule, MatSelectModule, MatRadioModule, MatCardModule, MatGridListModule, MatRippleModule, MatSlideToggleModule } from '@angular/material';
 import { UsertableComponent } from './components/usertable/usertable.component';
 import { MenuComponent } from './menu/menu.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -19,6 +19,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { HttpClientModule } from '@angular/common/http';
 import { MapComponent } from './components/map/map.component';
 import { LinechatComponent } from './components/linechat/linechat.component';
+import { HomeComponent } from './components/home/home.component';
+import { SpazalinechartComponent } from './components/spazalinechart/spazalinechart.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDMJCzNKJe3XDsfEdAPYnEAZWdsva0dTFU",
@@ -38,7 +40,9 @@ const firebaseConfig = {
     LoginComponent,
     RegisterComponent,
     MapComponent,
-    LinechatComponent
+    LinechatComponent,
+    HomeComponent,
+    SpazalinechartComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +66,11 @@ const firebaseConfig = {
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatGridListModule,
+    MatRippleModule,
+    MatSlideToggleModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

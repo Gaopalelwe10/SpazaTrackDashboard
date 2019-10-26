@@ -7,16 +7,21 @@ import { RegisterComponent } from './components/register/register.component';
 import { SpazatableComponent } from './components/spazatable/spazatable.component';
 import { MapComponent } from './components/map/map.component';
 import { LinechatComponent } from './components/linechat/linechat.component';
+import { HomeComponent } from './components/home/home.component';
+import { SpazalinechartComponent } from './components/spazalinechart/spazalinechart.component';
 
 const routes: Routes = [
   {path: '', component : LoginComponent},
   {path: 'register', component :RegisterComponent},
 
   {path: 'menu', component : MenuComponent, children:[
+    {path: '', component: HomeComponent},
+    {path: 'home', component: HomeComponent},
     {path:'userTable' , component: UsertableComponent},
     {path: 'spazaTable', component: SpazatableComponent},
     {path: 'map', component: MapComponent},
-    {path: 'linechart', component: LinechatComponent}
+    {path: 'linechart', component: LinechatComponent},
+    {path: 'spazalinechart', component: SpazalinechartComponent}
   ]}
 
 ];

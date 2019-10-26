@@ -35,6 +35,7 @@ export class LinechatComponent implements OnInit {
     private userService: UserService,
     private afs: AngularFirestore,
     public datepipe: DatePipe) {
+      
     this.afs.collection('users').valueChanges().subscribe((data: any) => {
       data.forEach(element => {
         this.value = this.datepipe.transform(element.Timestamp, 'MMM');
@@ -87,7 +88,7 @@ export class LinechatComponent implements OnInit {
           datasets: [{
             label: 'Number of Users Registered Monthly',
             data: [this.Jan, this.Feb, this.Mar, this.Apr, this.May, this.June, this.July, this.Aug, this.Sept, this.Oct, this.Nov, this.Dec],
-            fill: false,
+            fill: true,
             lineTension: 0.2,
             borderColor: "red",
             borderWidth: 1
