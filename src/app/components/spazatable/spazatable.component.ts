@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
-import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { MatPaginator, MatSort, MatTableDataSource, MatDialogConfig, MatDialog } from '@angular/material';
 import { SpazaService } from 'src/app/services/spaza.service';
+import { SpazaDialogComponent } from '../spaza-dialog/spaza-dialog.component';
 // import { SpazatableDataSource } from './spazatable-datasource';
 
 @Component({
@@ -15,11 +16,11 @@ export class SpazatableComponent implements OnInit {
   array;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['Name', 'Email', 'Address', 'Registered','commentCount', 'Discription'];
-  constructor(private spazaService: SpazaService) { }
+  displayedColumns = ['Name', 'Email', 'Address', 'Registered', 'commentCount', 'Discription'];
+  constructor(private spazaService: SpazaService, private dialog: MatDialog) { }
   ngOnInit() {
     this.getAllusers()
-   
+
     // this.dataSource = new MatTableDataSource(this.paginator, this.sort);
   }
   // ngAfterViewInit() {
@@ -30,16 +31,16 @@ export class SpazatableComponent implements OnInit {
     // this.users = this.afs.collection('users').valueChanges().subscribe(data => {
     //   console.log(data)
     // })
-    this.spazaService.getSpazas().subscribe((data:any) => {
+    this.spazaService.getSpazas().subscribe((data: any) => {
       // this.dataSource.data=data
-   
+
       this.array = data.map(e => {
         return {
           key: e.payload.doc.id,
           ...e.payload.doc.data()
         };
       });
-     
+
       console.log(this.array)
       this.dataSource = new MatTableDataSource(this.array)
       // this.dataSource.data = this.array;
@@ -69,7 +70,25 @@ export class SpazatableComponent implements OnInit {
     filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
     this.dataSource.filter = filterValue;
   }
-  pop(row) {
-    console.log(row);
+  pop(spaza) {
+    console.log(spaza);
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+
+    dialogConfig.data = {
+      Address: spaza.Address,
+      Close: spaza.Close,
+      Discription: spaza. Discription,
+      Hours: spaza.Hours,
+      Number: spaza.Number,
+      commentCount: spaza.commentCount,
+      key: spaza.key,
+      photoURL: spaza.photoURL,
+      spazaName: spaza.spazaName,
+    };
+
+    this.dialog.open(SpazaDialogComponent, dialogConfig);
   }
 }

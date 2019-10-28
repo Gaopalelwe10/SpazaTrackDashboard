@@ -1,6 +1,6 @@
 .full-width {
     width: 100%;
-    color: white;
+    /* color: white; */
 }
 
 .shipping-card {
@@ -46,11 +46,10 @@
 
 form {
     padding-top: 6%;
-    color: white;
 }
 
 .color {
-    -webkit-text-fill-color: aliceblue;
+    -webkit-text-fill-color: black !important;
     background-color: #20727d;
     height: 100%;
     width: 100%;
@@ -85,23 +84,15 @@ mat-card-title {
     padding-top: 20px;
 }
 
-.mat-error {
-    color: red !important;
-}
-
 .mat-card {
-    background: #20727d;
-    color: white;
-}
-
-.bt {
-    background: #1e4d54;
+    background: white;
+    /* color: white; */
 }
 
 .mat-fab,
 .mat-flat-button,
 .mat-mini-fab,
 .mat-raised-button {
-    color: rgba(0, 0, 0, .87);
-    background-color: #1e4d54;
+    color: white;
+    background-color: #20727d;
 }

@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpazatableComponent } from './components/spazatable/spazatable.component';
-import { MatTableModule, MatPaginatorModule, MatSortModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatInputModule, MatSelectModule, MatRadioModule, MatCardModule, MatGridListModule, MatRippleModule, MatSlideToggleModule } from '@angular/material';
+import { MatTableModule, MatPaginatorModule, MatSortModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatInputModule, MatSelectModule, MatRadioModule, MatCardModule, MatGridListModule, MatRippleModule, MatSlideToggleModule, MatDialogModule } from '@angular/material';
 import { UsertableComponent } from './components/usertable/usertable.component';
 import { MenuComponent } from './menu/menu.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -21,6 +21,8 @@ import { MapComponent } from './components/map/map.component';
 import { LinechatComponent } from './components/linechat/linechat.component';
 import { HomeComponent } from './components/home/home.component';
 import { SpazalinechartComponent } from './components/spazalinechart/spazalinechart.component';
+import { SpazaDialogComponent } from './components/spaza-dialog/spaza-dialog.component';
+import { CommentDialogComponent } from './components/comment-dialog/comment-dialog.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDMJCzNKJe3XDsfEdAPYnEAZWdsva0dTFU",
@@ -31,6 +33,7 @@ const firebaseConfig = {
   messagingSenderId: "822494409282",
   appId: "1:822494409282:web:3ce7dc82682553cdcb33db"
 };
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +45,9 @@ const firebaseConfig = {
     MapComponent,
     LinechatComponent,
     HomeComponent,
-    SpazalinechartComponent
+    SpazalinechartComponent,
+    SpazaDialogComponent,
+    CommentDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -70,9 +75,10 @@ const firebaseConfig = {
     MatGridListModule,
     MatRippleModule,
     MatSlideToggleModule,
-    
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[SpazaDialogComponent,CommentDialogComponent ]
 })
 export class AppModule { }

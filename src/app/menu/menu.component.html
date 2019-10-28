@@ -3,13 +3,40 @@
         <mat-toolbar color="primary">Menu</mat-toolbar>
         <mat-nav-list>
             <!-- <a mat-list-item href="#">Link 1</a> -->
-            <a mat-list-item routerLink="home" routerLinkActive="active">Home</a>
-            <a mat-list-item routerLink="userTable" routerLinkActive="active">UserTable</a>
-            <a mat-list-item routerLink="spazaTable" routerLinkActive="active">SpazaTable</a>
-            <a mat-list-item routerLink="linechart" routerLinkActive="active">User Linechart</a>
-            <a mat-list-item routerLink="spazalinechart" routerLinkActive="active">spazalinechart</a>
-            <a mat-list-item routerLink="map" routerLinkActive="active">map</a>
-            <a mat-list-item (click)="signout()">Logout</a>
+            <a mat-list-item routerLink="home" routerLinkActive="active">
+                <i class="material-icons">dashboard</i>
+                <span style="margin-left: 20px;">Home</span>
+            </a>
+
+            <a mat-list-item routerLink="userTable" routerLinkActive="active">
+                <i class="material-icons">library_books</i>
+                <span style="margin-left: 20px;">UserTable</span>
+            </a>
+
+            <a mat-list-item routerLink="spazaTable" routerLinkActive="active">
+                <i class="material-icons">library_books</i>
+                <span style="margin-left: 20px;">SpazaTable</span>
+            </a>
+
+            <a mat-list-item routerLink="linechart" routerLinkActive="active">
+                <i class="material-icons">show_chart</i>
+                <span style="margin-left: 20px;">User Line_chart</span>
+            </a>
+
+            <a mat-list-item routerLink="spazalinechart" routerLinkActive="active">
+                <i class="material-icons">show_chart</i>
+                <span style="margin-left: 20px;">spaza Line_chart</span>
+            </a>
+
+            <a mat-list-item routerLink="map" routerLinkActive="active">
+                <i class="material-icons">location_on</i>
+                <span style="margin-left: 20px;">map</span>
+            </a>
+
+            <a mat-list-item (click)="signout()">
+                <i class="material-icons">logout</i>
+                <span style="margin-left: 20px;">Logout</span>
+            </a>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>

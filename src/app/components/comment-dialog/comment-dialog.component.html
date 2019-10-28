@@ -1,0 +1,28 @@
+<div *ngFor="let comment of ItemsList">
+    <div *ngFor="let user of users | async">
+
+        <mat-card *ngIf="user.uid === comment.uid">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image">
+                    <img src="/assets/img/avatar.svg">
+                </div>
+                <!-- <div mat-card-avatar class="example-header-image" *ngIf="user?.photoURL !='' ">
+                    <img src="{{user.photoURL}}">
+                </div> -->
+                <mat-card-title>{{user.displayName}}</mat-card-title>
+                <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                <div class="right"> <button mat-icon-button color="warn" (click)="onDelete(comment)"><mat-icon>delete_outline</mat-icon></button></div>
+
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list-item>
+                    <!-- <mat-icon mat-list-icon>note</mat-icon> -->
+                    <p color="light">{{ comment.createdAt }}</p>
+                    <p>{{ comment?.content }}</p>
+                </mat-list-item>
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+    <br>
+</div>

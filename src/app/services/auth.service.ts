@@ -40,7 +40,7 @@ export class AuthService {
      logout() {
        this.afAuth.auth.signOut().then((success) => {
         console.log("success");
-        this.route.navigateByUrl('')
+        this.route.navigateByUrl('login')
       }).catch((error) => {
         console.log(error)
       })
