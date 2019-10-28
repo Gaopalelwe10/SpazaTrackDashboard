@@ -1,5 +1,6 @@
 .full-width {
     width: 100%;
+    color: white;
 }
 
 .shipping-card {
@@ -23,4 +24,84 @@
 
 .md-button {
     min-width: 100%;
+}
+
+.example-icon {
+    padding: 0 14px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.example-card {
+    text-align: center;
+    width: 30%;
+    height: 50%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+form {
+    padding-top: 6%;
+    color: white;
+}
+
+.color {
+    -webkit-text-fill-color: aliceblue;
+    background-color: #20727d;
+    height: 100%;
+    width: 100%;
+}
+
+mat-card {
+    width: 50%;
+    /* height: 600px; */
+    margin: auto;
+    vertical-align: middle;
+    top: 100px;
+    /* border-radius: 10%; */
+}
+
+.form-row {
+    display: flex;
+}
+
+.form-row input {
+    flex: 1;
+}
+
+mat-card-title {
+    text-align: end;
+}
+
+.mylocker .material-icons {
+    font-size: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.mat-error {
+    color: red !important;
+}
+
+.mat-card {
+    background: #20727d;
+    color: white;
+}
+
+.bt {
+    background: #1e4d54;
+}
+
+.mat-fab,
+.mat-flat-button,
+.mat-mini-fab,
+.mat-raised-button {
+    color: rgba(0, 0, 0, .87);
+    background-color: #1e4d54;
 }

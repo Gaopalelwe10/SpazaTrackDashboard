@@ -91,6 +91,7 @@ export class LinechatComponent implements OnInit {
             fill: true,
             lineTension: 0.2,
             borderColor: "red",
+            backgroundColor: '#6faeb7',
             borderWidth: 1
           }]
         },

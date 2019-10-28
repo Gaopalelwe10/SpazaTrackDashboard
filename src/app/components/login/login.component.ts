@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -16,12 +17,25 @@ export class LoginComponent {
  
   });
 
-  constructor(private fb: FormBuilder, private route: Router) {}
+  constructor(private fb: FormBuilder, 
+    private route: Router,
+    private authService : AuthService
+    ) {}
 
   onSubmit() {
     alert('Thanks!');
   }
-  login(){
-    this.route.navigateByUrl('menu')
+  // login(){
+  //   this.route.navigateByUrl('menu')
+  // }
+
+  async login() {
+  
+ 
+
+    this.authService.login(this.loginForm.value.email, this.loginForm.value.password).then(async () => {
+   
+    });
+
   }
 }

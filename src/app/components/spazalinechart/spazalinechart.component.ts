@@ -87,7 +87,7 @@ export class SpazalinechartComponent implements OnInit {
               fill: true,
               lineTension: 0.2,
               borderColor: "blue",
-              backgroundColor: 'rgba(105, 0, 132, .2)',
+              backgroundColor: '#6faeb7',
               borderWidth: 1
             }]
             

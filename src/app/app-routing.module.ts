@@ -9,12 +9,15 @@ import { MapComponent } from './components/map/map.component';
 import { LinechatComponent } from './components/linechat/linechat.component';
 import { HomeComponent } from './components/home/home.component';
 import { SpazalinechartComponent } from './components/spazalinechart/spazalinechart.component';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   {path: '', component : LoginComponent},
+  {path: 'login', component : LoginComponent},
+  
   {path: 'register', component :RegisterComponent},
 
-  {path: 'menu', component : MenuComponent, children:[
+  {path: 'menu', component : MenuComponent, canActivate: [AuthGuard], children:[
     {path: '', component: HomeComponent},
     {path: 'home', component: HomeComponent},
     {path:'userTable' , component: UsertableComponent},
