@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import { SpazaService } from 'src/app/services/spaza.service';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -16,11 +17,33 @@ export class MapComponent implements OnInit {
   startPosition: any;
   originPosition: string;
   destinationPosition: string;
-  constructor(private spazaService : SpazaService) { }
+  constructor(private spazaService : SpazaService) { 
+    spazaService.getSpazasMap().subscribe((data) => {
+      this.spazalist = data;
+      this.spazaload = data;
+      console.log( data)
+    })
+    
+  }
+  jotPip(xx){
+    console.log(xx)
+    this.map.flyTo({
+      center : [xx.lng,xx.lat],
+      zoom : 15
+    })
+  }
 
   ngOnInit() {
-    this.initializeMapBox()
+    this.initializeMapBox();
+   
   }
+  ionViewDidEnter() {
+    this.initializeItems();
+  }
+  initializeItems(): void {
+    this.spazalist = this.spazaload;
+  }
+
   initializeMapBox() {
     // or "const mapboxgl = require('mapbox-gl');"
     mapboxgl.accessToken = 'pk.eyJ1Ijoibm51bnUiLCJhIjoiY2p4cTIxazB3MG0wYTNncm4wanF0cDVjaiJ9.v0khvZZss9z_U2MroA2PVQ';
