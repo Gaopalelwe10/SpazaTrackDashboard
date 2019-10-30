@@ -69,3 +69,22 @@
     color: white;
     transform: rotateY(180deg);
   }
+    // STyle the button on a image
+    /* Style the button and place it in the middle of the container/image */
+.flip-card-back .btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.75);
+    color: white;
+    // opacity: 0.7;
+    color: white;
+    font-size: 16px;
+    padding: 4px 8px;
+    border: 1px solid;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+   

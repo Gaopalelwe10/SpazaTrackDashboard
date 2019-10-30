@@ -38,10 +38,15 @@ export class MapComponent implements OnInit {
 
     const el = document.createElement('div');
         el.className = 'marker';
-        el.style.backgroundImage = 'url(assets/img/icon.jpg)';
+        el.style.backgroundImage = 'url(assets/img/spotShop.png)';
         el.style.width = '40px';
         el.style.height = '40px';
 
+        var marker = new mapboxgl.Marker(el)
+        .setLngLat([xx.lng, xx.lat])
+        // .setPopup(new mapboxgl.Popup({ offset: 25 })
+        //   .setHTML('<p>' + this.startPosition.Address + '</p> '))
+        .addTo(this.map);
 
   }
 

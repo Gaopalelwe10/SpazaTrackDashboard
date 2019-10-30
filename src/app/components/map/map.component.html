@@ -2,17 +2,18 @@
 
 <div class="shopList"  >
 
-    <div class="flip-card">
+    <div class="flip-card" *ngFor="let spaza of spazalist" >
         <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <h1>John Doe</h1>
-            <p>Architect & Engineer</p>
-            <p>We love that guy</p>
+          <div class="flip-card-front" >
+            <h1>{{spaza.spazaName}}</h1>
+            <p>{{spaza.commentCount}} review</p>
+            <p> {{spaza.Address}}</p>
           </div>
-          <div class="flip-card-back" (click)=try()>
-            
-            <img src="/assets/img/download.jpg" alt="Avatar" style="width:180px;height:180px;">
-          </div>
+          <div class="flip-card-back"(click)="jotPip(spaza)">
+            <button class="btn">Find Shop</button>
+            <img src="{{spaza.photoURL}}" alt="Avatar" style="width:180px;height:180px;">
+         
+        </div>
         </div>
       </div>
 
