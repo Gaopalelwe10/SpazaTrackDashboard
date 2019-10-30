@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog, MatDialogConfig } from '@angular/material';
 import { CommentDialogComponent } from '../comment-dialog/comment-dialog.component';
+import { SpazaupdateDialogComponent } from '../spazaupdate-dialog/spazaupdate-dialog.component';
 
 @Component({
   selector: 'app-spaza-dialog',
@@ -38,7 +39,27 @@ export class SpazaDialogComponent implements OnInit {
     this.dialog.open(CommentDialogComponent , dialogConfig);
 
   }
+  Update(){
+    const dialogConfig = new MatDialogConfig();
 
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.maxHeight="84vh";
+    // dialogConfig.maxWidth="50%";
+
+  //   dialogConfig.data = {
+  //     ownerKey : spaza.ownerKey,
+  //     spazaKey : spaza.spazaKey,
+  //     spazaName : spaza.spazaName,
+  //     cityName : spaza.cityName,
+  //     streetName : spaza.streetName
+  //   };
+    dialogConfig.data = this.spaza;
+    this.close();
+
+    this.dialog.open(SpazaupdateDialogComponent , dialogConfig);
+
+  }
   close() {
     this.dialogRef.close();
   }

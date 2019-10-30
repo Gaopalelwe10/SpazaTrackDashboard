@@ -93,6 +93,7 @@ export class SpazalinechartComponent implements OnInit {
             
           },
           options: {
+            responsive: true,
             title: {
               text: "Line Chart",
               display: true

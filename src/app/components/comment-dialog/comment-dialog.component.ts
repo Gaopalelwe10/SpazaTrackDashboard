@@ -24,6 +24,7 @@ export class CommentDialogComponent implements OnInit {
     // this.postRef = this.afs.doc('posts/testPost')
     this.users = this.afs.collection('users').valueChanges();
     this.commentsRef = this.spazaRef.collection('comments', ref => ref.orderBy('createdAt', 'desc'))
+    
     this.commentsRef.snapshotChanges().subscribe(data =>{
 
       this.ItemsList=data.map(e =>{

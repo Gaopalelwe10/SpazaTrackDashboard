@@ -15,7 +15,7 @@ export class UsertableComponent implements OnInit {
   array;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['Name', 'Email', 'Address', 'Registered'];
+  displayedColumns = ['Name', 'Email', 'Address', 'Gender', 'Registered'];
   constructor(private userService: UserService) { }
   ngOnInit() {
     this.getAllusers()

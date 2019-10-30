@@ -1,0 +1,59 @@
+<div class="color ">
+    <form [formGroup]=" updateForm" novalidate>
+        <mat-card class="shipping-card mat-elevation-z24">
+            <mat-card-header>
+                <mat-card-title>Spaza Update</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Spaza Name" formControlName="spazaName">
+                            <mat-error *ngIf=" updateForm.controls['spazaName'].hasError('required')">
+                                Spaza Name is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Conatact" formControlName="Number">
+                            <mat-error *ngIf=" updateForm.controls['Number'].hasError('required')">
+                                Conatact is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Discreption" formControlName="Discription">
+                            <mat-error *ngIf=" updateForm.controls['Discription'].hasError('required')">
+                                Discreption is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Open Hours" formControlName="Address">
+                            <mat-error *ngIf=" updateForm.controls['Address'].hasError('required')">
+                                Open Hours is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button class="bt" type="submit" (click)="Update()" class="md-button" [disabled]="! updateForm.valid">Update</button>
+
+            </mat-card-actions>
+            <mat-card-actions>
+
+                <button mat-raised-button class="bt" type="submit" (click)="Cancel()" class="md-button">Cancel</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</div>

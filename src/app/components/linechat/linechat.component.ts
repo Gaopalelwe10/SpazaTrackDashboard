@@ -96,6 +96,7 @@ export class LinechatComponent implements OnInit {
           }]
         },
         options: {
+          responsive: true,
           title: {
             text: "Line Chart",
             display: true

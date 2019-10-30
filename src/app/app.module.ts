@@ -23,6 +23,8 @@ import { HomeComponent } from './components/home/home.component';
 import { SpazalinechartComponent } from './components/spazalinechart/spazalinechart.component';
 import { SpazaDialogComponent } from './components/spaza-dialog/spaza-dialog.component';
 import { CommentDialogComponent } from './components/comment-dialog/comment-dialog.component';
+import { UserpieChartComponent } from './components/userpie-chart/userpie-chart.component';
+import { SpazaupdateDialogComponent } from './components/spazaupdate-dialog/spazaupdate-dialog.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDMJCzNKJe3XDsfEdAPYnEAZWdsva0dTFU",
@@ -47,7 +49,9 @@ const firebaseConfig = {
     HomeComponent,
     SpazalinechartComponent,
     SpazaDialogComponent,
-    CommentDialogComponent
+    CommentDialogComponent,
+    UserpieChartComponent,
+    SpazaupdateDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -79,6 +83,10 @@ const firebaseConfig = {
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[SpazaDialogComponent,CommentDialogComponent ]
+  entryComponents:[
+    SpazaDialogComponent,
+    CommentDialogComponent,
+    SpazaupdateDialogComponent,
+   ]
 })
 export class AppModule { }

@@ -3,12 +3,12 @@
 
         <mat-card *ngIf="user.uid === comment.uid">
             <mat-card-header>
-                <div mat-card-avatar class="example-header-image">
+                <div mat-card-avatar class="example-header-image" *ngIf="user?.photoURL =='' ">
                     <img src="/assets/img/avatar.svg">
                 </div>
-                <!-- <div mat-card-avatar class="example-header-image" *ngIf="user?.photoURL !='' ">
-                    <img src="{{user.photoURL}}">
-                </div> -->
+                <div mat-card-avatar class="example-header-image" *ngIf="user?.photoURL !='' ">
+                    <img src="{{user.photoURL}}" width="50px" height="50px">
+                </div>
                 <mat-card-title>{{user.displayName}}</mat-card-title>
                 <mat-card-subtitle>Dog Breed</mat-card-subtitle>
                 <div class="right"> <button mat-icon-button color="warn" (click)="onDelete(comment)"><mat-icon>delete_outline</mat-icon></button></div>
