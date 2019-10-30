@@ -2,8 +2,22 @@
 
 <div class="shopList"  >
 
+    <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h1>John Doe</h1>
+            <p>Architect & Engineer</p>
+            <p>We love that guy</p>
+          </div>
+          <div class="flip-card-back" (click)=try()>
+            
+            <img src="/assets/img/download.jpg" alt="Avatar" style="width:180px;height:180px;">
+          </div>
+        </div>
+      </div>
 
-    <li *ngFor="let spaza of spazalist" (click)="jotPip(spaza)">
+<!-- 
+     <li *ngFor="let spaza of spazalist" (click)="jotPip(spaza)">
         <p class="spazaName">
             {{spaza.spazaName}}
         </p>
@@ -18,6 +32,8 @@
             {{spaza.Address}}
         </p>
     </li>
+    -->
+   
     <!-- <ion-slides startAutoplay>
 
         <ion-slide>
@@ -50,5 +66,5 @@
 
 
         </ion-slide>
-    </ion-slides> -->
-</div>
+    </ion-slides> --
+</div> -->

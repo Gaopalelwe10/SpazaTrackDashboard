@@ -23,6 +23,8 @@ import { HomeComponent } from './components/home/home.component';
 import { SpazalinechartComponent } from './components/spazalinechart/spazalinechart.component';
 import { SpazaDialogComponent } from './components/spaza-dialog/spaza-dialog.component';
 import { CommentDialogComponent } from './components/comment-dialog/comment-dialog.component';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyDMJCzNKJe3XDsfEdAPYnEAZWdsva0dTFU",
@@ -77,7 +79,9 @@ const firebaseConfig = {
     MatSlideToggleModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [
+    Geolocation
+  ],
   bootstrap: [AppComponent],
   entryComponents:[SpazaDialogComponent,CommentDialogComponent ]
 })
