@@ -25,7 +25,7 @@ import { SpazaDialogComponent } from './components/spaza-dialog/spaza-dialog.com
 import { CommentDialogComponent } from './components/comment-dialog/comment-dialog.component';
 import { UserpieChartComponent } from './components/userpie-chart/userpie-chart.component';
 import { SpazaupdateDialogComponent } from './components/spazaupdate-dialog/spazaupdate-dialog.component';
-import { Geolocation } from '@ionic-native/geolocation/ngx';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyDMJCzNKJe3XDsfEdAPYnEAZWdsva0dTFU",
@@ -81,9 +81,10 @@ const firebaseConfig = {
     MatRippleModule,
     MatSlideToggleModule,
     MatDialogModule
+    
   ],
   providers: [
-    Geolocation
+  
   ],
   bootstrap: [AppComponent],
   entryComponents:[

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import { SpazaService } from 'src/app/services/spaza.service';
-import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 @Component({
   selector: 'app-map',
@@ -20,7 +19,7 @@ export class MapComponent implements OnInit {
   destinationPosition: string;
   constructor(
     private spazaService : SpazaService,
-    public geolocation: Geolocation
+  
     ){ 
     spazaService.getSpazasMap().subscribe((data) => {
       this.spazalist = data;
@@ -100,25 +99,25 @@ console.log("**")
 
     // });
 
-    this.geolocation.getCurrentPosition()
-      .then((response) => {
+    // this.geolocation.getCurrentPosition()
+    //   .then((response) => {
 
-        this.startPosition = response.coords;
-        // this.originPosition= response.Address;
-        this.map.setCenter([this.startPosition.longitude, this.startPosition.latitude]);
+    //     this.startPosition = response.coords;
+    //     // this.originPosition= response.Address;
+    //     this.map.setCenter([this.startPosition.longitude, this.startPosition.latitude]);
 
-        const el = document.createElement('div');
-        el.className = 'marker';
-        el.style.backgroundImage = 'url(assets/img/icon.jpg)';
-        el.style.width = '40px';
-        el.style.height = '40px';
+    //     const el = document.createElement('div');
+    //     el.className = 'marker';
+    //     el.style.backgroundImage = 'url(assets/img/icon.jpg)';
+    //     el.style.width = '40px';
+    //     el.style.height = '40px';
 
-        var marker = new mapboxgl.Marker(el)
-          .setLngLat([this.startPosition.longitude, this.startPosition.latitude])
-          // .setPopup(new mapboxgl.Popup({ offset: 25 })
-          //   .setHTML('<p>' + this.startPosition.Address + '</p> '))
-          .addTo(this.map);
-      })
+    //     var marker = new mapboxgl.Marker(el)
+    //       .setLngLat([this.startPosition.longitude, this.startPosition.latitude])
+    //       // .setPopup(new mapboxgl.Popup({ offset: 25 })
+    //       //   .setHTML('<p>' + this.startPosition.Address + '</p> '))
+    //       .addTo(this.map);
+    //   })
 
 
     // load coodinates from database
