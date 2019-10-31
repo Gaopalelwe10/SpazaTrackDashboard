@@ -39,3 +39,7 @@ table {
 .mat-paginator {
     width: 100%;
 }
+
+.example-tooltip-red {
+    background: #b71c1c !important;
+}

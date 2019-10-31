@@ -87,6 +87,7 @@ export class SpazatableComponent implements OnInit {
       key: spaza.key,
       photoURL: spaza.photoURL,
       spazaName: spaza.spazaName,
+      uid: spaza.uid
     };
 
     this.dialog.open(SpazaDialogComponent, dialogConfig);
