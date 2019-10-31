@@ -28,3 +28,75 @@
     </mat-card>
 
 </div>
+
+<div class="shopList">
+
+    <div class="flip-card" *ngFor="let spaza of spazalist">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <h6>{{spaza.spazaName}}</h6>
+                <h5>{{spaza.spazaName}}</h5>
+                <p>{{spaza.commentCount}} review</p>
+                <p> {{spaza.Address}}</p>
+            </div>
+            <div class="flip-card-back" (click)="jotPip(spaza)">
+                <button class="btn">Find Shop</button>
+                <img src="{{spaza.photoURL}}" alt="Avatar" style="width:180px;height:180px;">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+     <li *ngFor="let spaza of spazalist" (click)="jotPip(spaza)">
+        <p class="spazaName">
+            {{spaza.spazaName}}
+        </p>
+        <p class="font" >
+            No review
+        </p>
+        <p class="font" >
+            {{spaza.commentCount}} review
+        </p>
+
+        <p class="font ad">
+            {{spaza.Address}}
+        </p>
+    </li>
+    -->
+
+    <!-- <ion-slides startAutoplay>
+
+        <ion-slide>
+
+
+            <ion-card>
+
+                <ion-card-content>
+                    <p class="spazaName">
+                        {{spaza.spazaName}}
+                    </p>
+                    <p class="font" >
+                        No review
+                    </p>
+                    <p class="font">
+                        {{spaza.commentCount}} review
+                    </p>
+
+                    <p class="font ad">
+                        {{spaza.Address}}
+                    </p>
+                    <p class="font">
+                        {{spaza.Hours | date:'HH:mm a'}} - {{spaza.Close | date:'HH:mm a'}}
+                        <!-- <ion-icon name="call" slot="end" class="call" color="primary"></ion-icon> --
+                        <span class="right"> <span  (click)="comment(spaza)">View more</span> &nbsp; &nbsp; &nbsp; <span (click)="navigate(spaza)">Direction</span></span>
+                    </p>
+                    <p></p>
+                </ion-card-content>
+            </ion-card>
+
+
+        </ion-slide>
+    </ion-slides> --
+</div> -->
+    >>>>>>> 69ccaf4318f64483bac668d87de87c02fbcbdbe2

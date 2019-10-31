@@ -86,7 +86,9 @@ const firebaseConfig = {
     MatDialogModule,
     MatTooltipModule
   ],
-  providers: [],
+  providers: [
+   
+  ],
   bootstrap: [AppComponent],
   entryComponents:[
     SpazaDialogComponent,
