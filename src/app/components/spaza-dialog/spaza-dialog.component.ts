@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog, MatDialogConfig } from '@angular/material';
 import { CommentDialogComponent } from '../comment-dialog/comment-dialog.component';
 import { SpazaupdateDialogComponent } from '../spazaupdate-dialog/spazaupdate-dialog.component';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-spaza-dialog',
@@ -10,13 +11,13 @@ import { SpazaupdateDialogComponent } from '../spazaupdate-dialog/spazaupdate-di
 })
 export class SpazaDialogComponent implements OnInit {
   spaza: any;
-  constructor(private dialogRef: MatDialogRef<SpazaDialogComponent>, @Inject(MAT_DIALOG_DATA) data, public dialog: MatDialog) {
+  constructor(private dialogRef: MatDialogRef<SpazaDialogComponent>, @Inject(MAT_DIALOG_DATA) data, public dialog: MatDialog, private afs : AngularFirestore) {
     console.log(data);
     this.spaza = data;
   }
 
   ngOnInit() {
-    this.dialogRef.updateSize('50%');
+    // this.dialogRef.updateSize('50%');
   }
   viewComments(){
     const dialogConfig = new MatDialogConfig();
@@ -38,6 +39,18 @@ export class SpazaDialogComponent implements OnInit {
 
     this.dialog.open(CommentDialogComponent , dialogConfig);
 
+  }
+  delete(){
+    console.log(this.spaza.key);
+    console.log(this.spaza.uid)
+    this.afs.collection('spazashop').doc(this.spaza.key).delete().then(()=>{
+      
+      this.afs.doc('users/' + this.spaza.uid).update({
+        Registered: "no",
+      }).then(()=>{
+        this.close();
+      })
+    })
   }
   Update(){
     const dialogConfig = new MatDialogConfig();

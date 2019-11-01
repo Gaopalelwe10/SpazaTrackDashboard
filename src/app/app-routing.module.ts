@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'register', component :RegisterComponent},
 
   {path: 'menu', component : MenuComponent, canActivate: [AuthGuard], children:[
-    {path: '', component: HomeComponent},
+  
     {path: 'home', component: HomeComponent},
     {path:'userTable' , component: UsertableComponent},
     {path: 'spazaTable', component: SpazatableComponent},

@@ -30,6 +30,7 @@ export class SpazaupdateDialogComponent implements OnInit {
     this.dialogRef.updateSize('50%');
   }
  Update(){
+   
   this.afs.collection('spazashop').doc(this.spaza.key).update({
     spazaName: this.updateForm.value.spazaName,
     Discription: this.updateForm.value.Discription,
@@ -41,7 +42,7 @@ export class SpazaupdateDialogComponent implements OnInit {
     console.log("updated")
     // this.route.navigateByUrl("spazaboard")
  
-
+    alert("updated")
   }).catch(err => {
     alert(err.message)
   })

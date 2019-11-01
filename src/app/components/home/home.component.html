@@ -1,4 +1,107 @@
-<div class="grid-container">
+<div class="cont">
+    <div _ngcontent-kdc-c5="" class="row">
+        <div _ngcontent-kdc-c5="" class="col-lg-3 col-md-6 col-sm-6">
+            <div _ngcontent-kdc-c5="" class="card card-stats">
+                <div _ngcontent-kdc-c5="" class="card-header card-header-warning card-header-icon">
+                    <div _ngcontent-kdc-c5="" class="card-icon"><i _ngcontent-kdc-c5="" class="material-icons">person</i></div>
+                    <p _ngcontent-kdc-c5="" class="card-category">No. Users</p>
+                    <h3 _ngcontent-kdc-c5="" class="card-title">{{users}} </h3>
+                </div>
+            </div>
+        </div>
+        <div _ngcontent-kdc-c5="" class="col-lg-3 col-md-6 col-sm-6">
+            <div _ngcontent-kdc-c5="" class="card card-stats">
+                <div _ngcontent-kdc-c5="" class="card-header card-header-success card-header-icon">
+                    <div _ngcontent-kdc-c5="" class="card-icon"><i _ngcontent-kdc-c5="" class="material-icons">store_mall_directory</i></div>
+                    <p _ngcontent-kdc-c5="" class="card-category">No. Spazas</p>
+                    <h3 _ngcontent-kdc-c5="" class="card-title">{{spazas}}</h3>
+                </div>
+            </div>
+        </div>
+        <div _ngcontent-kdc-c5="" class="col-lg-3 col-md-6 col-sm-6">
+            <div _ngcontent-kdc-c5="" class="card card-stats">
+                <div _ngcontent-kdc-c5="" class="card-header card-header-danger card-header-icon">
+                    <div _ngcontent-kdc-c5="" class="card-icon"><i _ngcontent-kdc-c5="" class="fa fa-male fa-2x"></i></div>
+                    <p _ngcontent-kdc-c5="" class="card-category">No. Females</p>
+                    <h3 _ngcontent-kdc-c5="" class="card-title">{{Female}}</h3>
+                </div>
+            </div>
+        </div>
+        <div _ngcontent-kdc-c5="" class="col-lg-3 col-md-6 col-sm-6">
+            <div _ngcontent-kdc-c5="" class="card card-stats">
+                <div _ngcontent-kdc-c5="" class="card-header card-header-info card-header-icon">
+                    <div _ngcontent-kdc-c5="" class="card-icon"><i _ngcontent-kdc-c5="" class="fa fa-female fa-2x"></i></div>
+                    <p _ngcontent-kdc-c5="" class="card-category">No. Males</p>
+                    <h3 _ngcontent-kdc-c5="" class="card-title">{{Male}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div _ngcontent-kdc-c5="" class="col-lg-6 col-md-6 col-sm-6">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title style="text-align: center;">
+                        Registered users per month
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="dashboard-card-content">
+                    <div>
+                        <app-linechat></app-linechat>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+
+        </div>
+        <div _ngcontent-kdc-c5="" class="col-lg-6 col-md-6 col-sm-6">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title style="text-align: center;">
+                        Registered spazas per month
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="dashboard-card-content">
+                    <div>
+                        <app-spazalinechart></app-spazalinechart>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div _ngcontent-kdc-c5="" class="col-lg-6 col-md-6 col-sm-6">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title style="text-align: center;">Registered Users Gender
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div>
+                        <app-userpie-chart></app-userpie-chart>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+
+        </div>
+        <div _ngcontent-kdc-c5="" class="col-lg-6 col-md-6 col-sm-6">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title style="text-align: center;">Users VS Spazas
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div>
+                        <app-pie-chart></app-pie-chart>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+
+        </div>
+    </div>
+</div>
+
+<!-- <div class="grid-container">
     <mat-grid-list cols="2" rowHeight="500px">
         <mat-grid-tile>
             <mat-card class="dashboard-card">
@@ -46,24 +149,20 @@
             </mat-card>
         </mat-grid-tile>
 
-
-
-    </mat-grid-list>
-    <!-- <mat-grid-list cols="1" rowHeight="2:1">
-
         <mat-grid-tile>
             <mat-card class="dashboard-card">
                 <mat-card-header>
-                    <mat-card-title style="text-align: center;">Registered Spazas
+                    <mat-card-title style="text-align: center;">Users VS Spazas
                     </mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
                     <div>
-                        <app-spazatable></app-spazatable>
+                        <app-pie-chart></app-pie-chart>
                     </div>
                 </mat-card-content>
             </mat-card>
         </mat-grid-tile>
 
-    </mat-grid-list> -->
-</div>
+    </mat-grid-list>
+
+</div> -->

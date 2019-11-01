@@ -23,3 +23,11 @@
     z-index: 1;
     background: #20727d;
 }
+
+.mat-nav-list a:hover {
+    background: #255d64;
+}
+
+.active {
+    background: #255d64;
+}

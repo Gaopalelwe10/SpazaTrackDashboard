@@ -1,31 +1,27 @@
 <div #map id="map"></div>
 <div id='geocoder' class='geocoder'></div>
 
+<div class="padding " >
+      <mat-card class="example-card">
+    <div class="flip-card" *ngFor="let spaza of spazalist">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <h5>{{spaza.spazaName}}</h5>
+                <p>{{spaza.commentCount}} review</p>
+                <p> {{spaza.Address}}</p>
+            </div>
+            <div class="flip-card-back" (click)="jotPip(spaza)">
+                <button class="btn">Find Shop</button>
+                <img src="{{spaza.photoURL}}" alt="Avatar" style="width:170px;height:135px;" class="center">
 
-    
-<!-- <div class="shopList"> -->
-     
-      <div class="padding">
-          <mat-card class="example-card">
-            <div class="flip-card" *ngFor="let spaza of spazalist" >
-                <div class="flip-card-inner">
-                  <div class="flip-card-front" >
-                    <h5>{{spaza.spazaName}}</h5>
-                    <p>{{spaza.commentCount}} review</p>
-                    <p> {{spaza.Address}}</p>
-                  </div>
-                  <div class="flip-card-back"(click)="jotPip(spaza)">
-                    <button class="btn">Find Shop</button>
-                    <img src="{{spaza.photoURL}}" alt="Avatar" style="width:150px;height:150px;" class="center">
-                 
-                </div>
-                </div>
-              </div>
-          </mat-card>
-      </div>
-    <!-- </div> -->
+            </div>
+        </div>
+       
+    </div>
+      </mat-card>
+</div>
 
-<!-- 
+    <!-- 
      <li *ngFor="let spaza of spazalist" (click)="jotPip(spaza)">
         <p class="spazaName">
             {{spaza.spazaName}}
@@ -42,7 +38,7 @@
         </p>
     </li>
     -->
-   
+
     <!-- <ion-slides startAutoplay>
 
         <ion-slide>

@@ -39,13 +39,13 @@ export class UserpieChartComponent implements OnInit {
       this.pieChart = new Chart('pieChart', {
         type: 'pie',
         data: {
-
+       
           datasets: [{
             // label: 'Number of Users Registered Monthly',
             data: [this.Male, this.Female, this.Other],
             backgroundColor: [
-              '#6faeb7',
-              'blue',
+              '#ef5350',
+              '#26c6da',
               'yellow'
             ],
             label: 'Dataset 1'
