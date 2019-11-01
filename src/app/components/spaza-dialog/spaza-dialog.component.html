@@ -64,15 +64,15 @@
     <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-6">
             <button mat-button mat-raised-button class="bt" type="submit" class="md-button" (click)="delete()">Delete</button>
-        </div>
+        </div><br>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <button mat-button mat-raised-button class="bt" type="submit" class="md-button" (click)="Update()">Update</button>
-        </div>
+        </div><br>
         <div class="col-lg-3 col-md-6 col-sm-6" *ngIf="spaza?.commentCount!=0">
-            <button mat-button mat-raised-button class="bt" type="submit" class="md-button" (click)="viewComments()"> view Comments</button>
-        </div>
+            <button mat-button mat-raised-button class="bt" type="submit" class="md-button" (click)="viewComments()"> View Comments</button>
+        </div><br>
         <div class="col-lg-3 col-md-6 col-sm-6">
-            <button mat-button mat-raised-button class="bt" type="submit" class="md-button" *ngIf="productList!=0" (click)="viewProducts()"> view Products</button>
+            <button mat-button mat-raised-button class="bt" type="submit" class="md-button" *ngIf="productList!=0" (click)="viewProducts()"> View Products</button>
         </div>
     </div>
 </mat-card>

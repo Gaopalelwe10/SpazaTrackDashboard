@@ -16,21 +16,21 @@ export class CommentDialogComponent implements OnInit {
   comments$: Observable<any>;
   ItemsList;
   spazauid
-  users:any;
+  users: any;
 
-  
-  constructor( private afs: AngularFirestore, private dialogRef: MatDialogRef<CommentDialogComponent>, @Inject(MAT_DIALOG_DATA) data, public dialog: MatDialog) {
-    this.spazauid=data.key;
-    console.log("id "+this.spazauid)
+
+  constructor(private afs: AngularFirestore, private dialogRef: MatDialogRef<CommentDialogComponent>, @Inject(MAT_DIALOG_DATA) data, public dialog: MatDialog) {
+    this.spazauid = data.key;
+    console.log("id " + this.spazauid)
     this.spazaRef = this.afs.doc(`spazashop/${this.spazauid}`)
     // this.postRef = this.afs.doc('posts/testPost')
     this.users = this.afs.collection('users').valueChanges();
     this.commentsRef = this.spazaRef.collection('comments', ref => ref.orderBy('createdAt', 'desc'))
-    
-    this.commentsRef.snapshotChanges().subscribe(data =>{
 
-      this.ItemsList=data.map(e =>{
-        return{
+    this.commentsRef.snapshotChanges().subscribe(data => {
+
+      this.ItemsList = data.map(e => {
+        return {
           key: e.payload.doc.id,
           ...e.payload.doc.data()
         };
@@ -38,15 +38,17 @@ export class CommentDialogComponent implements OnInit {
       console.log(this.ItemsList);
     })
 
-   }
+  }
 
   ngOnInit() {
     this.dialogRef.updateSize('50%');
   }
 
-  onDelete(comment){
-    this.spazaRef.collection('comments').doc(comment.key).delete().then(()=>{
-      console.log("deleted")
-    })
+  onDelete(comment) {
+    if (confirm("Are you sure you want to delete the product")) {
+      this.spazaRef.collection('comments').doc(comment.key).delete().then(() => {
+        console.log("deleted")
+      })
+    }
   }
 }

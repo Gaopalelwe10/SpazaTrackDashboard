@@ -47,8 +47,11 @@ export class ProductDialogComponent implements OnInit {
   }
 
   onDelete(product){
-    this.spazaServe.getProducts(this.spazauid).doc(product.key).delete().then(()=>{
-      console.log("deleted")
-    })
+    if(confirm("Are you sure you want to delete the product")){
+      this.spazaServe.getProducts(this.spazauid).doc(product.key).delete().then(()=>{
+        console.log("deleted")
+      })
+    }
+   
   }
 }

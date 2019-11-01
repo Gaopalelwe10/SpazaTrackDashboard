@@ -12,7 +12,8 @@ export class AuthService {
   constructor(   
     private afs: AngularFirestore,
     public afAuth: AngularFireAuth,
-    public route :Router,
+    private route :Router,
+    
  
     ) { 
       afAuth.auth.onAuthStateChanged((user) => {
@@ -39,8 +40,13 @@ export class AuthService {
     }
      logout() {
        this.afAuth.auth.signOut().then((success) => {
-        console.log("success");
-        this.route.navigateByUrl('login')
+        this.route.navigateByUrl('login').then(()=>{
+          console.log("success");
+          this.route.navigateByUrl('');
+        })
+        
+      
+     
       }).catch((error) => {
         console.log(error)
       })

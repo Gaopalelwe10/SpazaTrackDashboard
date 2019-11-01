@@ -43,8 +43,8 @@ export class MapComponent implements OnInit {
 
         var marker = new mapboxgl.Marker(el)
         .setLngLat([xx.lng, xx.lat])
-        // .setPopup(new mapboxgl.Popup({ offset: 25 })
-        //   .setHTML('<p>' + this.startPosition.Address + '</p> '))
+        .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+        .setHTML('<p>' + xx.Address + '</p> <p>Spaza Name: ' + xx.spazaName + '</p>'))
         .addTo(this.map);
 
   }
