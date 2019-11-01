@@ -42,11 +42,11 @@
                 <h4 mat-line>{{spaza?.Address}}</h4>
             </mat-list-item>
             <mat-list-item>
-                <mat-icon mat-list-icon>access_time</mat-icon>
+                <mat-icon mat-list-icon color="primary">access_time</mat-icon>
                 <h4 mat-line>{{spaza?.Hours | date:'HH:mm a'}} - {{spaza?.Close | date:'HH:mm a'}}</h4>
             </mat-list-item>
             <mat-list-item>
-                <mat-icon mat-list-icon>call</mat-icon>
+                <mat-icon mat-list-icon color="primary">call</mat-icon>
                 <h4 mat-line>{{spaza?.Number}}</h4>
             </mat-list-item>
             <mat-list-item>
@@ -55,9 +55,24 @@
         </mat-list>
 
     </mat-card-content>
-    <mat-card-actions>
-        <button mat-button (click)="delete()">Delete</button>
-        <button mat-button (click)="Update()">Update</button>
-        <button mat-button *ngIf="spaza?.commentCount!=0" (click)="viewComments()"> view Comments</button>
-    </mat-card-actions>
+    <!-- <mat-card-actions>
+      
+    
+      
+
+    </mat-card-actions> -->
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <button mat-button mat-raised-button class="bt" type="submit" class="md-button" (click)="delete()">Delete</button>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <button mat-button mat-raised-button class="bt" type="submit" class="md-button" (click)="Update()">Update</button>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6" *ngIf="spaza?.commentCount!=0">
+            <button mat-button mat-raised-button class="bt" type="submit" class="md-button" (click)="viewComments()"> view Comments</button>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <button mat-button mat-raised-button class="bt" type="submit" class="md-button" *ngIf="productList!=0" (click)="viewProducts()"> view Products</button>
+        </div>
+    </div>
 </mat-card>

@@ -17,6 +17,8 @@ export class CommentDialogComponent implements OnInit {
   ItemsList;
   spazauid
   users:any;
+
+  
   constructor( private afs: AngularFirestore, private dialogRef: MatDialogRef<CommentDialogComponent>, @Inject(MAT_DIALOG_DATA) data, public dialog: MatDialog) {
     this.spazauid=data.key;
     console.log("id "+this.spazauid)

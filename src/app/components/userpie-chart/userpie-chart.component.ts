@@ -44,7 +44,7 @@ export class UserpieChartComponent implements OnInit {
             // label: 'Number of Users Registered Monthly',
             data: [this.Male, this.Female, this.Other],
             backgroundColor: [
-              '#ef5350',
+              '#9e5d5c',
               '#26c6da',
               'yellow'
             ],

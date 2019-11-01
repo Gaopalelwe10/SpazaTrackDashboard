@@ -27,6 +27,7 @@ import { UserpieChartComponent } from './components/userpie-chart/userpie-chart.
 import { SpazaupdateDialogComponent } from './components/spazaupdate-dialog/spazaupdate-dialog.component';
 import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 import { UserupdateDialogComponent } from './components/userupdate-dialog/userupdate-dialog.component';
+import { ProductDialogComponent } from './components/product-dialog/product-dialog.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDMJCzNKJe3XDsfEdAPYnEAZWdsva0dTFU",
@@ -55,7 +56,8 @@ const firebaseConfig = {
     UserpieChartComponent,
     SpazaupdateDialogComponent,
     PieChartComponent,
-    UserupdateDialogComponent
+    UserupdateDialogComponent,
+    ProductDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -94,7 +96,8 @@ const firebaseConfig = {
     SpazaDialogComponent,
     CommentDialogComponent,
     SpazaupdateDialogComponent,
-    UserupdateDialogComponent
+    UserupdateDialogComponent,
+    ProductDialogComponent
    ]
 })
 export class AppModule { }
