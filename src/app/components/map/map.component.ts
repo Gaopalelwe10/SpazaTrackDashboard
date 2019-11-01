@@ -19,7 +19,7 @@ export class MapComponent implements OnInit {
   destinationPosition: string;
   constructor(
     private spazaService : SpazaService,
-
+  
     ){ 
     spazaService.getSpazasMap().subscribe((data) => {
       this.spazalist = data;

@@ -85,6 +85,7 @@ const firebaseConfig = {
     MatGridListModule,
     MatRippleModule,
     MatSlideToggleModule,
+  
     MatDialogModule,
     MatTooltipModule
   ],
