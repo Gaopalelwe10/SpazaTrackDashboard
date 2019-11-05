@@ -53,7 +53,7 @@ export class SpazaDialogComponent implements OnInit {
   //     streetName : spaza.streetName
   //   };
     dialogConfig.data = this.spaza;
-    this.close();
+  
 
     this.dialog.open(CommentDialogComponent , dialogConfig);
 
@@ -75,10 +75,11 @@ export class SpazaDialogComponent implements OnInit {
   //     streetName : spaza.streetName
   //   };
     dialogConfig.data = this.spaza;
-    this.close();
+   
 
     this.dialog.open(ProductDialogComponent , dialogConfig);
   }
+
   delete(){
     console.log(this.spaza.key);
     console.log(this.spaza.uid)
@@ -107,7 +108,6 @@ export class SpazaDialogComponent implements OnInit {
   //     streetName : spaza.streetName
   //   };
     dialogConfig.data = this.spaza;
-    this.close();
 
     this.dialog.open(SpazaupdateDialogComponent , dialogConfig);
 

@@ -41,7 +41,7 @@ export class CommentDialogComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dialogRef.updateSize('50%');
+    this.dialogRef.updateSize('30%');
   }
 
   onDelete(comment) {
