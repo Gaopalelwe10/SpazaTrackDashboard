@@ -1,20 +1,51 @@
 <div #map id="map"></div>
 
-<div class="shopList"  >
 
+
+    <div class="directions-control directions-control-directions" id="close" *ngIf="isDirection">
+        <div class="mapbox-directions-component mapbox-directions-route-summary" style="position: sticky;top: 0;">
+            
+            <!-- <ion-icon name="close-circle-outline" class="close" (click)="directionClose()" float-right></ion-icon> -->
+            <h6>{{finalDuration}} Mins  {{finalDistance}} KM </h6>
+            <!-- <span>Time {{finalDistance}} </span> -->
+           
+        </div>
+
+        <div class="mapbox-directions-instructions" *ngFor="let item of steps; let i =index" (click)="jotPip(item)">
+            <div class="mapbox-directions-instructions-wrapper">
+                <ul class="mapbox-directions-steps">
+                    <li class="mapbox-directions-step">
+
+
+                        <span class="directions-icon   directions-icon-{{item.maneuver.type}} directions-icon-{{item.maneuver.modifier}}"   >
+                               
+                        </span>
+                        
+                                <p>{{item.maneuver.instruction}}
+                                    <br>
+                                  <strong>  {{(item.distance / 1000).toFixed(2) }}  KM</strong>
+                                </p>
+                                
+                                <!-- <p>{{(item.distance / 1000).toFixed(2) }}  KM</p>
+                        -->
+                        
+                    </li>
+                   
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<div class="shopList"  >
     <div class="flip-card" *ngFor="let spaza of spazalist" >
         <div class="flip-card-inner">
           <div class="flip-card-front" >
-<<<<<<< HEAD
-            <h6>{{spaza.spazaName}}</h6>
-=======
             <h5>{{spaza.spazaName}}</h5>
->>>>>>> 7f32d18
             <p>{{spaza.commentCount}} review</p>
             <p> {{spaza.Address}}</p>
           </div>
-          <div class="flip-card-back"(click)="jotPip(spaza)">
-            <button class="btn">Find Shop</button>
+          <div class="flip-card-back">
+            <button class="btn" (click)="getRoute(spaza)">Find {{spaza.spazaName}} Spaza</button>
             <img src="{{spaza.photoURL}}" alt="Avatar" style="width:180px;height:180px;">
          
         </div>

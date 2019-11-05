@@ -11,14 +11,41 @@
     // background-color: #bbb;
     opacity: 0.90;
     bottom: 20px;
-    width: 45%;
-    height: 70%;
-    left : 10px;
-    top: 130px;
-    // overflow-y: scroll;
+    width: 200px;
+    height: 720px;
+    right : 10px;
+    top: 210px;
+    overflow-y: scroll;
 }
+.directions-control {
+  position: absolute;
+  margin: 7px 0 0;
+  color: #fff;
+  width: 260px;
+  height: 450px;
+  top: 210px;
+  bottom: 0;
+ left: 2px;
+  background-color: rgba(0,0,0,0.75);
+  border-radius: 1.75%;
+  overflow-y: scroll;
+  direction : rtl;
+  font-family: sans-serif;
+  // font-size: 0.8em;
+  // line-height: 2em;
+}
+.directions-control-directions{
+  width: 260px;
+  max-width: 260px;
+}
+.mapbox-directions-component{
 
-
+  background-color:black;
+}
+.mapbox-directions-instructions-wrapper{
+  position: relative;
+  left: 10px;
+}
 ///@at-root
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
@@ -29,7 +56,7 @@
     width: 180px;
     height: 180px;
     border: 1px solid #f1f1f1;
-    top: 90px;
+    // top: 90px;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
   }
   
