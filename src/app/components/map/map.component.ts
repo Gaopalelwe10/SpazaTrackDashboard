@@ -145,6 +145,7 @@ posLng;
   }
   try(){
 console.log("**")
+this.isDirection = false;
   }
   initializeMapBox() {
     // or "const mapboxgl = require('mapbox-gl');"

@@ -2,7 +2,7 @@
 
 
 
-    <div class="directions-control directions-control-directions" id="close" *ngIf="isDirection">
+    <div class="directions-control directions-control-directions" id="close" (click)="try()" *ngIf="isDirection">
         <div class="mapbox-directions-component mapbox-directions-route-summary" style="position: sticky;top: 0;">
             
             <!-- <ion-icon name="close-circle-outline" class="close" (click)="directionClose()" float-right></ion-icon> -->
