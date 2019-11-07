@@ -61,6 +61,7 @@ export class UserpieChartComponent implements OnInit {
           responsive: true
         }
       });
+      
       this.value = null
       this.Male = 0;
       this.Female = 0;

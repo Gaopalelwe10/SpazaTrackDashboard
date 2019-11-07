@@ -14,14 +14,14 @@ export class ProductDialogComponent implements OnInit {
   size;
   constructor(
     private afs: AngularFirestore,
-    private dialogRef: MatDialogRef<ProductDialogComponent>, 
-    @Inject(MAT_DIALOG_DATA) data, 
+    private dialogRef: MatDialogRef<ProductDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) data,
     public dialog: MatDialog,
     private spazaServe: SpazaService
   ) {
-    this.spazauid=data.key;
-    console.log("id "+this.spazauid)
-   }
+    this.spazauid = data.key;
+    console.log("id " + this.spazauid)
+  }
 
   ngOnInit() {
     this.dialogRef.updateSize('30%');
@@ -30,7 +30,7 @@ export class ProductDialogComponent implements OnInit {
       this.size = query.size
       if (this.size == 0) {
         this.productList = 0
-     
+
       } else {
         this.spazaServe.getProducts(this.spazauid).snapshotChanges().subscribe(data => {
 
@@ -46,12 +46,12 @@ export class ProductDialogComponent implements OnInit {
     })
   }
 
-  onDelete(product){
-    if(confirm("Are you sure you want to delete the product")){
-      this.spazaServe.getProducts(this.spazauid).doc(product.key).delete().then(()=>{
+  onDelete(product) {
+    if (confirm("Are you sure you want to delete selected product")) {
+      this.spazaServe.getProducts(this.spazauid).doc(product.key).delete().then(() => {
         console.log("deleted")
       })
     }
-   
+
   }
 }

@@ -12,15 +12,15 @@ import { SpazaService } from 'src/app/services/spaza.service';
 export class HomeComponent implements OnInit {
   users = 0;
   spazas = 0;
-  value: string;
+  value: any;
   Male = 0;
   Female = 0;
+  
   constructor(private afs: AngularFirestore, private userService: UserService, private spazaService: SpazaService) {
     this.userService.getUsersV().subscribe((data: any) => {
+      this.users=data.length
 
       data.forEach(element => {
-        this.users++;
-
         this.value = element.gender;
 
         if (this.value === 'Male') {
@@ -30,23 +30,23 @@ export class HomeComponent implements OnInit {
         if (this.value === 'Female') {
           this.Female++;
         }
+
       })
 
+      this.value=null;
+    
     })
 
 
-    this.spazaService.getSpazasMap().subscribe(data => {
-      data.forEach(element => {
-        this.spazas++;
-      })
+    this.spazaService.getSpazasMap().subscribe((data:any) => {
+        this.spazas=data.length
     })
-    this.users = 0;
-    this.spazas = 0
-    this.Male = 0;
-    this.Female = 0;
+  
   }
 
   ngOnInit() {
+
+  
   }
 
 }

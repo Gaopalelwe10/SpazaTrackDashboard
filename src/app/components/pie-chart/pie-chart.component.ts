@@ -45,8 +45,8 @@ export class PieChartComponent implements OnInit {
         }
       });
 
-      this.usercount = 0;
-      this.spazacount = 0;
+      // this.usercount = 0;
+      // this.spazacount = 0;
     })
   })
   }

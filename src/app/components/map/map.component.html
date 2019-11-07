@@ -1,27 +1,58 @@
 <div #map id="map"></div>
-<div id='geocoder' class='geocoder'></div>
 
-<div class="padding " >
-      <mat-card class="example-card">
-    <div class="flip-card" *ngFor="let spaza of spazalist">
-        <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <h5>{{spaza.spazaName}}</h5>
-                <p>{{spaza.commentCount}} review</p>
-                <p> {{spaza.Address}}</p>
-            </div>
-            <div class="flip-card-back" (click)="jotPip(spaza)">
-                <button class="btn">Find Shop</button>
-                <img src="{{spaza.photoURL}}" alt="Avatar" style="width:170px;height:135px;" class="center">
 
+
+    <div class="directions-control directions-control-directions" id="close" (click)="try()" *ngIf="isDirection">
+        <div class="mapbox-directions-component mapbox-directions-route-summary" style="position: sticky;top: 0;">
+            
+            <!-- <ion-icon name="close-circle-outline" class="close" (click)="directionClose()" float-right></ion-icon> -->
+            <h6>{{finalDuration}} Mins  {{finalDistance}} KM </h6>
+            <!-- <span>Time {{finalDistance}} </span> -->
+           
+        </div>
+
+        <div class="mapbox-directions-instructions" *ngFor="let item of steps; let i =index" (click)="jotPip(item)">
+            <div class="mapbox-directions-instructions-wrapper">
+                <ul class="mapbox-directions-steps">
+                    <li class="mapbox-directions-step">
+
+
+                        <span class="directions-icon   directions-icon-{{item.maneuver.type}} directions-icon-{{item.maneuver.modifier}}"   >
+                               
+                        </span>
+                        
+                                <p>{{item.maneuver.instruction}}
+                                    <br>
+                                  <strong>  {{(item.distance / 1000).toFixed(2) }}  KM</strong>
+                                </p>
+                                
+                                <!-- <p>{{(item.distance / 1000).toFixed(2) }}  KM</p>
+                        -->
+                        
+                    </li>
+                   
+                </ul>
             </div>
         </div>
-       
     </div>
-      </mat-card>
-</div>
 
-    <!-- 
+<div class="shopList"  >
+    <div class="flip-card" *ngFor="let spaza of spazalist" >
+        <div class="flip-card-inner">
+          <div class="flip-card-front" >
+            <h5>{{spaza.spazaName}}</h5>
+            <p>{{spaza.commentCount}} review</p>
+            <p> {{spaza.Address}}</p>
+          </div>
+          <div class="flip-card-back">
+            <button class="btn" (click)="getRoute(spaza)">Find {{spaza.spazaName}} Spaza</button>
+            <img src="{{spaza.photoURL}}" alt="Avatar" style="width:180px;height:180px;">
+         
+        </div>
+        </div>
+      </div>
+
+<!-- 
      <li *ngFor="let spaza of spazalist" (click)="jotPip(spaza)">
         <p class="spazaName">
             {{spaza.spazaName}}
@@ -38,7 +69,7 @@
         </p>
     </li>
     -->
-
+   
     <!-- <ion-slides startAutoplay>
 
         <ion-slide>
@@ -62,7 +93,7 @@
                     </p>
                     <p class="font">
                         {{spaza.Hours | date:'HH:mm a'}} - {{spaza.Close | date:'HH:mm a'}}
-                        <ion-icon name="call" slot="end" class="call" color="primary"></ion-icon> 
+                        <!-- <ion-icon name="call" slot="end" class="call" color="primary"></ion-icon> --
                         <span class="right"> <span  (click)="comment(spaza)">View more</span> &nbsp; &nbsp; &nbsp; <span (click)="navigate(spaza)">Direction</span></span>
                     </p>
                     <p></p>
@@ -73,3 +104,5 @@
         </ion-slide>
     </ion-slides> --
 </div> -->
+
+   }
