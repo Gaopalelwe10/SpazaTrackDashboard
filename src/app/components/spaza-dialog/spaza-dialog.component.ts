@@ -13,14 +13,14 @@ import { SpazaService } from 'src/app/services/spaza.service';
 })
 export class SpazaDialogComponent implements OnInit {
   spaza: any;
-  size=0;
-  productList=0;
-  constructor(private dialogRef: MatDialogRef<SpazaDialogComponent>, 
-    @Inject(MAT_DIALOG_DATA) data, 
-    public dialog: MatDialog, 
-    private afs : AngularFirestore,
-    private spazaServe:SpazaService
-    ) {
+  size = 0;
+  productList = 0;
+  constructor(private dialogRef: MatDialogRef<SpazaDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) data,
+    public dialog: MatDialog,
+    private afs: AngularFirestore,
+    private spazaServe: SpazaService
+  ) {
     console.log(data);
     this.spaza = data;
   }
@@ -31,85 +31,87 @@ export class SpazaDialogComponent implements OnInit {
       this.size = query.size
       if (this.size == 0) {
         this.productList = 0
-     
-      }else{
-        this.productList=1;
+
+      } else {
+        this.productList = 1;
       }
     })
   }
-  viewComments(){
+  viewComments() {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
-    dialogConfig.maxHeight="84vh";
+    dialogConfig.maxHeight = "84vh";
     // dialogConfig.maxWidth="50%";
 
-  //   dialogConfig.data = {
-  //     ownerKey : spaza.ownerKey,
-  //     spazaKey : spaza.spazaKey,
-  //     spazaName : spaza.spazaName,
-  //     cityName : spaza.cityName,
-  //     streetName : spaza.streetName
-  //   };
+    //   dialogConfig.data = {
+    //     ownerKey : spaza.ownerKey,
+    //     spazaKey : spaza.spazaKey,
+    //     spazaName : spaza.spazaName,
+    //     cityName : spaza.cityName,
+    //     streetName : spaza.streetName
+    //   };
     dialogConfig.data = this.spaza;
-  
 
-    this.dialog.open(CommentDialogComponent , dialogConfig);
+
+    this.dialog.open(CommentDialogComponent, dialogConfig);
 
   }
 
-  viewProducts(){
+  viewProducts() {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
-    dialogConfig.maxHeight="84vh";
+    dialogConfig.maxHeight = "84vh";
     // dialogConfig.maxWidth="50%";
 
-  //   dialogConfig.data = {
-  //     ownerKey : spaza.ownerKey,
-  //     spazaKey : spaza.spazaKey,
-  //     spazaName : spaza.spazaName,
-  //     cityName : spaza.cityName,
-  //     streetName : spaza.streetName
-  //   };
+    //   dialogConfig.data = {
+    //     ownerKey : spaza.ownerKey,
+    //     spazaKey : spaza.spazaKey,
+    //     spazaName : spaza.spazaName,
+    //     cityName : spaza.cityName,
+    //     streetName : spaza.streetName
+    //   };
     dialogConfig.data = this.spaza;
-   
 
-    this.dialog.open(ProductDialogComponent , dialogConfig);
+
+    this.dialog.open(ProductDialogComponent, dialogConfig);
   }
 
-  delete(){
-    console.log(this.spaza.key);
-    console.log(this.spaza.uid)
-    this.afs.collection('spazashop').doc(this.spaza.key).delete().then(()=>{
-      
-      this.afs.doc('users/' + this.spaza.uid).update({
-        Registered: "no",
-      }).then(()=>{
-        this.close();
+  delete() {
+    if (confirm("Are you sure you want to delete selected Spaza")) {
+      console.log(this.spaza.key);
+      console.log(this.spaza.uid)
+      this.afs.collection('spazashop').doc(this.spaza.key).delete().then(() => {
+
+        this.afs.doc('users/' + this.spaza.uid).update({
+          Registered: "no",
+        }).then(() => {
+          this.close();
+        })
       })
-    })
+    }
   }
-  Update(){
+  Update() {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
-    dialogConfig.maxHeight="84vh";
+    dialogConfig.maxHeight = "84vh";
     // dialogConfig.maxWidth="50%";
 
-  //   dialogConfig.data = {
-  //     ownerKey : spaza.ownerKey,
-  //     spazaKey : spaza.spazaKey,
-  //     spazaName : spaza.spazaName,
-  //     cityName : spaza.cityName,
-  //     streetName : spaza.streetName
-  //   };
+    //   dialogConfig.data = {
+    //     ownerKey : spaza.ownerKey,
+    //     spazaKey : spaza.spazaKey,
+    //     spazaName : spaza.spazaName,
+    //     cityName : spaza.cityName,
+    //     streetName : spaza.streetName
+    //   };
     dialogConfig.data = this.spaza;
 
-    this.dialog.open(SpazaupdateDialogComponent , dialogConfig);
+    this.dialog.open(SpazaupdateDialogComponent, dialogConfig);
 
   }
   close() {
