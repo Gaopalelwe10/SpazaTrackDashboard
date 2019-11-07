@@ -1,5 +1,7 @@
 <div #map id="map"></div>
+<div id='geocoder' class='geocoder'></div>
 
+<<<<<<< HEAD
 
 
     <div class="directions-control directions-control-directions" id="close" (click)="try()" *ngIf="isDirection">
@@ -49,10 +51,29 @@
             <img src="{{spaza.photoURL}}" alt="Avatar" style="width:180px;height:180px;">
          
         </div>
-        </div>
-      </div>
+=======
+<div class="padding " >
+      <mat-card class="example-card">
+    <div class="flip-card" *ngFor="let spaza of spazalist">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <h5>{{spaza.spazaName}}</h5>
+                <p>{{spaza.commentCount}} review</p>
+                <p> {{spaza.Address}}</p>
+            </div>
+            <div class="flip-card-back" (click)="jotPip(spaza)">
+                <button class="btn">Find Shop</button>
+                <img src="{{spaza.photoURL}}" alt="Avatar" style="width:170px;height:135px;" class="center">
 
-<!-- 
+            </div>
+>>>>>>> upstream/master
+        </div>
+       
+    </div>
+      </mat-card>
+</div>
+
+    <!-- 
      <li *ngFor="let spaza of spazalist" (click)="jotPip(spaza)">
         <p class="spazaName">
             {{spaza.spazaName}}
@@ -69,7 +90,7 @@
         </p>
     </li>
     -->
-   
+
     <!-- <ion-slides startAutoplay>
 
         <ion-slide>
@@ -93,7 +114,7 @@
                     </p>
                     <p class="font">
                         {{spaza.Hours | date:'HH:mm a'}} - {{spaza.Close | date:'HH:mm a'}}
-                        <!-- <ion-icon name="call" slot="end" class="call" color="primary"></ion-icon> --
+                        <ion-icon name="call" slot="end" class="call" color="primary"></ion-icon> 
                         <span class="right"> <span  (click)="comment(spaza)">View more</span> &nbsp; &nbsp; &nbsp; <span (click)="navigate(spaza)">Direction</span></span>
                     </p>
                     <p></p>

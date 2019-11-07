@@ -1,0 +1,17 @@
+<div *ngFor="let product of productList">
+    <mat-card>
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image" *ngIf="product?.image =='' ">
+                <img src="/assets/img/avatar.svg">
+            </div>
+            <div mat-card-avatar class="example-header-image" *ngIf="product?.image!='' ">
+                <img src="{{product.image}}" width="50px" height="50px">
+            </div>
+            <mat-card-title>{{product.ProName}}</mat-card-title>
+            <mat-card-subtitle>{{product.Type}}</mat-card-subtitle>
+            <div class="right"> <button mat-icon-button color="warn" (click)="onDelete(product)"><mat-icon>delete_outline</mat-icon></button></div>
+
+        </mat-card-header>
+    </mat-card>
+    <br>
+</div>

@@ -14,4 +14,7 @@ export class SpazaService {
   getSpazasMap() {
     return this.afs.collection('spazashop').valueChanges();
   }
+  getProducts(key){
+    return this.afs.doc(`spazashop/${key}`).collection('products', ref => ref.orderBy('createdAt', 'desc'));
+  }
 }

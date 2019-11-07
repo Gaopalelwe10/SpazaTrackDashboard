@@ -1,0 +1,73 @@
+<div class="color ">
+    <form [formGroup]=" updateForm" novalidate>
+        <mat-card class="shipping-card mat-elevation-z24">
+            <mat-card-header>
+                <mat-card-title>User Update</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Name" formControlName="displayName">
+                            <mat-error *ngIf="updateForm.controls['displayName'].hasError('required')">
+                                User Name is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <!-- <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Gender" formControlName="gender">
+                            <mat-error *ngIf=" updateForm.controls['gender'].hasError('required')">
+                                gender is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div> -->
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <mat-select placeholder="Gender" formControlName="gender">
+                                <mat-option *ngFor="let g of gender" [value]="g.name">
+                                    {{ g.name }}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="updateForm.controls['gender'].hasError('required')">
+                                Gender is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Address" formControlName="Address">
+                            <mat-error *ngIf=" updateForm.controls['Address'].hasError('required')">
+                                Address is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Registered" formControlName="Registered">
+                            <mat-error *ngIf=" updateForm.controls['Registered'].hasError('required')">
+                                Registered is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button class="bt" type="submit" (click)="Update()" class="md-button" [disabled]="! updateForm.valid">Update</button>
+
+            </mat-card-actions>
+            <mat-card-actions>
+
+                <button mat-raised-button class="bt" type="submit" (click)="Cancel()" class="md-button">Cancel</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</div>

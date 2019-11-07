@@ -11,4 +11,10 @@ export class UserService {
   getUsers() {
     return this.afs.collection('users').snapshotChanges();
   }
+  getUsersV() {
+    return this.afs.collection('users').valueChanges();
+  }
+  Delete(key) {
+    return this.afs.collection('users').doc(key).delete();
+  }
 }
