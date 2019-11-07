@@ -20,7 +20,7 @@ export class AuthService {
         if (user) {
           this.route.navigateByUrl('menu/home')
         } else {
-          this.route.navigateByUrl('menu/home')
+          this.route.navigateByUrl('')
         }
       })
     }

@@ -98,6 +98,7 @@ export class UsertableComponent implements OnInit {
       alert(err.message)
     })
   }
+ 
   exportAsXLSX(): void {
     this.excelService.exportAsExcelFile(this.excel, 'UserTable');
   }
