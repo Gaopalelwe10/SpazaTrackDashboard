@@ -16,10 +16,10 @@ body {
     // width: 100%;
     position: fixed;
     top: 60px;
-    max-width: 90%;
-    min-width: 90%;
-    margin-left: 0;
-    margin-right: 2%;
+    // max-width: 90%;
+    // min-width: 90%;
+    // margin-left: 0;
+    // margin-right: 2%;
 }
 
 .geocoder {
@@ -48,4 +48,8 @@ body {
     border-radius: 50%;
     cursor: pointer;
     padding: 0;
+}
+
+mat-icon.mat-primary {
+    color: #20727d;
 }

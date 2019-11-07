@@ -10,11 +10,12 @@
                     <img src="{{user.photoURL}}" width="50px" height="50px">
                 </div>
                 <mat-card-title>{{user.displayName}}</mat-card-title>
-                <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
                 <div class="right"> <button mat-icon-button color="warn" (click)="onDelete(comment)"><mat-icon>delete_outline</mat-icon></button></div>
 
             </mat-card-header>
             <mat-card-content>
+                <br>
                 <mat-list-item>
                     <!-- <mat-icon mat-list-icon>note</mat-icon> -->
                     <p color="light">{{ comment.createdAt }}</p>

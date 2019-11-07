@@ -1,3 +1,25 @@
+.md-button {
+    min-width: 100%;
+}
+
+.mat-fab,
+.mat-flat-button,
+.mat-mini-fab,
+.mat-raised-button {
+    color: white;
+    background-color: #20727d;
+}
+
 img {
+    width: 100%;
     max-height: 35vh;
+    overflow: hidden;
+}
+
+mat-icon.mat-primary {
+    color: #20727d;
+}
+
+.col-lg-3 {
+    padding: 10px;
 }
