@@ -81,7 +81,7 @@ export class SpazaDialogComponent implements OnInit {
   }
 
   delete() {
-    if (confirm("Are you sure you want to delete a Spaza")) {
+    if (confirm("Are you sure you want to delete selected Spaza")) {
       console.log(this.spaza.key);
       console.log(this.spaza.uid)
       this.afs.collection('spazashop').doc(this.spaza.key).delete().then(() => {

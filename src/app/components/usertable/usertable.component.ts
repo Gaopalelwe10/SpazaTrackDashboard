@@ -92,7 +92,7 @@ export class UsertableComponent implements OnInit {
   }
 
   onDelete(row) {
-    if (confirm("Are you sure you want to delete a User")) {
+    if (confirm("Are you sure you want to delete selected User")) {
       this.userService.Delete(row.uid).then((results: any) => {
         alert("deleted")
       }).catch(err => {
