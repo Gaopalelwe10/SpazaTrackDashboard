@@ -92,13 +92,15 @@ export class UsertableComponent implements OnInit {
   }
 
   onDelete(row) {
-    this.userService.Delete(row.uid).then((results: any) => {
-      alert("deleted")
-    }).catch(err => {
-      alert(err.message)
-    })
+    if (confirm("Are you sure you want to delete a User")) {
+      this.userService.Delete(row.uid).then((results: any) => {
+        alert("deleted")
+      }).catch(err => {
+        alert(err.message)
+      })
+    }
   }
- 
+
   exportAsXLSX(): void {
     this.excelService.exportAsExcelFile(this.excel, 'UserTable');
   }

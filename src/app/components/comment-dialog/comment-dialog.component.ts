@@ -45,7 +45,7 @@ export class CommentDialogComponent implements OnInit {
   }
 
   onDelete(comment) {
-    if (confirm("Are you sure you want to delete the product")) {
+    if (confirm("Are you sure you want to delete selected comment")) {
       this.spazaRef.collection('comments').doc(comment.key).delete().then(() => {
         console.log("deleted")
       })
