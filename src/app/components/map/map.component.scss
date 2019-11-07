@@ -1,195 +1,117 @@
+
 #map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
 }
 
-<<<<<<< HEAD
 .shopList {
-    position: absolute;
-    color: white;
-    // background-color: #bbb;
-    opacity: 0.90;
-    bottom: 20px;
-    width: 200px;
-    height: 720px;
-    right : 10px;
-    top: 210px;
-    overflow-y: scroll;
-=======
-.example-card {
-    width: 20%;
-    height: 70%;
-    left: 10px;
-    top: 130px;
-    // overflow-y: scroll;
->>>>>>> upstream/master
+  position: absolute;
+  color: white;
+  // background-color: #bbb;
+  opacity: 0.90;
+  bottom: 20px;
+  width: 200px;
+  height: 720px;
+  right : 10px;
+  top: 210px;
+  overflow-y: scroll;
 }
 .directions-control {
-  position: absolute;
-  margin: 7px 0 0;
-  color: #fff;
-  width: 260px;
-  height: 450px;
-  top: 210px;
-  bottom: 0;
- left: 2px;
-  background-color: rgba(0,0,0,0.75);
-  border-radius: 1.75%;
-  overflow-y: scroll;
-  direction : rtl;
-  font-family: sans-serif;
-  // font-size: 0.8em;
-  // line-height: 2em;
+position: absolute;
+margin: 7px 0 0;
+color: #fff;
+width: 260px;
+height: 450px;
+top: 210px;
+bottom: 0;
+left: 2px;
+background-color: rgba(0,0,0,0.75);
+border-radius: 1.75%;
+overflow-y: scroll;
+direction : rtl;
+font-family: sans-serif;
+// font-size: 0.8em;
+// line-height: 2em;
 }
 .directions-control-directions{
-  width: 260px;
-  max-width: 260px;
+width: 260px;
+max-width: 260px;
 }
 .mapbox-directions-component{
 
-<<<<<<< HEAD
-  background-color:black;
+background-color:black;
 }
 .mapbox-directions-instructions-wrapper{
-  position: relative;
-  left: 10px;
+position: relative;
+left: 10px;
 }
-=======
->>>>>>> upstream/master
 ///@at-root
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-
 .flip-card {
-    position: relative;
-<<<<<<< HEAD
-    
-    background-color: transparent;
-    width: 180px;
-    height: 180px;
-    border: 1px solid #f1f1f1;
-    // top: 90px;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
-  }
+  position: relative;
   
-  /* This container is needed to position the front and back side */
-  .flip-card-inner {
-=======
-    margin-bottom: 15px !important;
-    // background-color: transparent;
-    // width: 180px;
-    // height: 180px;
-    width: 290px;
-    height: 150px;
-    border: 2px solid #f1f1f1;
-    // top: 90px;
-    perspective: 1000px;
-    /* Remove this if you don't want the 3D effect */
+  background-color: transparent;
+  width: 180px;
+  height: 180px;
+  border: 1px solid #f1f1f1;
+  // top: 90px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
-
 
 /* This container is needed to position the front and back side */
-
 .flip-card-inner {
->>>>>>> upstream/master
-    position: relative;
-    width: 100%;
-    height: 100%;
-    // background: #20727d;
-    text-align: start;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
-
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
-
 .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
-
 
 /* Position the front and back side */
-
-.flip-card-front,
-.flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
 }
-
 
 /* Style the front side (fallback if image is missing) */
-
 .flip-card-front {
-    // background-color: rgba(0,0,0,0.75);
-    background-color: white;
-    padding: 20px;
-    color: black;
-    // transform: rotateY(180deg);
+  background-color: rgba(0,0,0,0.75);
+  color: white;
+  // transform: rotateY(180deg);
 }
-
 
 /* Style the back side */
-
 .flip-card-back {
-    // background-color: dodgerblue;
-    color: white;
-    transform: rotateY(180deg);
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
 }
-
-// STyle the button on a image
-
-/* Style the button and place it in the middle of the container/image */
-
+  // STyle the button on a image
+  /* Style the button and place it in the middle of the container/image */
 .flip-card-back .btn {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    background-color: #20727d;
-    // background-color: rgba(0,0,0,0.75);
-    color: white;
-    // opacity: 0.7;
-    color: white;
-    font-size: 16px;
-    padding: 4px 8px;
-    border: 1px solid;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-#map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.example-card {
-    // overflow-y: auto;
-    // background: rgb(230, 214, 195);    
-    background: #F5F5F5;
-    max-width: 400px;
-    height: 500px;
-    // overflow: scroll;
-    overflow: auto;
-    // position: absolute;
-}
-
-.padding {
-    padding: 4px;
-}
-
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0,0.75);
+  color: white;
+  // opacity: 0.7;
+  color: white;
+  font-size: 16px;
+  padding: 4px 8px;
+  border: 1px solid;
+  cursor: pointer;
+  border-radius: 5px;
 }

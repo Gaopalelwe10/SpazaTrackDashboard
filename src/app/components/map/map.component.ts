@@ -1,7 +1,9 @@
+
 import { Component, OnInit } from '@angular/core';
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import { SpazaService } from 'src/app/services/spaza.service';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import {HttpClient} from '@angular/common/http';
 @Component({
@@ -33,14 +35,9 @@ posLng;
   finalDuration;
   finalDistance;
   constructor(
-<<<<<<< HEAD
     private http : HttpClient,
     private spazaService : SpazaService
     // public geolocation: Geolocation
-=======
-    private spazaService : SpazaService,
-  
->>>>>>> upstream/master
     ){ 
     spazaService.getSpazasMap().subscribe((data) => {
       this.spazalist = data;
@@ -89,7 +86,6 @@ posLng;
         el.style.width = '40px';
         el.style.height = '40px';
 
-<<<<<<< HEAD
         // var marker = new mapboxgl.Marker(el)
         // .setLngLat([xx.lng, xx.lat])
         // // .setPopup(new mapboxgl.Popup({ offset: 25 })
@@ -136,14 +132,6 @@ posLng;
         });
       }
   
-=======
-        var marker = new mapboxgl.Marker(el)
-        .setLngLat([xx.lng, xx.lat])
-        .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-        .setHTML('<p>' + xx.Address + '</p> <p>Spaza Name: ' + xx.spazaName + '</p>'))
-        .addTo(this.map);
-
->>>>>>> upstream/master
   }
 
   ngOnInit() {
@@ -183,44 +171,9 @@ this.isDirection = false;
     });
 
 
-<<<<<<< HEAD
     this.map.addControl(this.geocoder);
     // Add zoom and rotation controls to the map.
     this.map.addControl(new mapboxgl.NavigationControl());
-=======
-     // Add zoom and rotation controls to the map.
-     this.map.addControl(new mapboxgl.NavigationControl());
-
-    // this.geocoder.on('result', (ev) => {
-    //   console.log(ev.result.text)
-    //   this.value = ev.result.text;
-    //   this.search(ev.result.text)
-    //   console.log("valu ll" + this.value)
-    //   console.log("me")
-    //   // map.getSource('single-point').setData(ev.result.geometry);
-
-    // });
-
-    // this.geolocation.getCurrentPosition()
-    //   .then((response) => {
-
-    //     this.startPosition = response.coords;
-    //     // this.originPosition= response.Address;
-    //     this.map.setCenter([this.startPosition.longitude, this.startPosition.latitude]);
-
-    //     const el = document.createElement('div');
-    //     el.className = 'marker';
-    //     el.style.backgroundImage = 'url(assets/img/icon.jpg)';
-    //     el.style.width = '40px';
-    //     el.style.height = '40px';
-
-    //     var marker = new mapboxgl.Marker(el)
-    //       .setLngLat([this.startPosition.longitude, this.startPosition.latitude])
-    //       // .setPopup(new mapboxgl.Popup({ offset: 25 })
-    //       //   .setHTML('<p>' + this.startPosition.Address + '</p> '))
-    //       .addTo(this.map);
-    //   })
->>>>>>> upstream/master
 
 
     // load coodinates from database
@@ -363,3 +316,4 @@ this.isDirection = false;
 
   }
 }
+
